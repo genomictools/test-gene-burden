@@ -7,8 +7,8 @@
 #SBATCH -t 120:00:00
 
 # Setup test directory
-mkdir -p test/ test/input
-cd test/
+mkdir -p tests/ tests/input
+cd tests/
 
 # Download test data
 URL="https://figshare.com/ndownloader/files"
