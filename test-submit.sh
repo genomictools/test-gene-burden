@@ -8,16 +8,18 @@
 
 # Setup test directory
 mkdir -p tests/ tests/input
+
+# Download input data
+mkdir -p tests tests/input
+
+URL="https://raw.githubusercontent.com/genomictools/test-datasets/refs/heads/test-gene-burden"
+wget -c $URL/cohorts_info.csv -O tests/input/cohorts_info.csv
+wget -c $URL/general.categoryA.aggregate.tsv -O tests/input/general.categoryA.aggregate.tsv
+wget -c $URL/general.categoryB.aggregate.tsv -O tests/input/general.categoryB.aggregate.tsv
+wget -c $URL/pheno.categoryA.aggregate.tsv -O tests/input/pheno.categoryA.aggregate.tsv
+wget -c $URL/pheno.categoryB.aggregate.tsv -O tests/input/pheno.categoryB.aggregate.tsv
+
 cd tests/
-
-# Download test data
-URL="https://figshare.com/ndownloader/files"
-
-wget -c $URL/52171952 -O input/cohorts_info.csv
-wget -c $URL/50357925 -O input/general.categoryA.aggregate.tsv
-wget -c $URL/50357928 -O input/general.categoryB.aggregate.tsv
-wget -c $URL/51077813 -O input/pheno.categoryA.aggregate.tsv
-wget -c $URL/51077816 -O input/pheno.categoryB.aggregate.tsv
 
 # Run nextflow
 module load Nextflow
