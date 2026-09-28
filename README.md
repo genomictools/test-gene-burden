@@ -1,25 +1,19 @@
-[![Runs successfully](https://github.com/houlstonlab/test-gene-burden/actions/workflows/runs-successfully.yml/badge.svg?branch=main)](https://github.com/houlstonlab/test-gene-burden/actions/workflows/runs-successfully.yml)
 ### Introduction
 
 This workflow tests the excess burden of variants in cases of a certain 
 phenotype compared to a control poulation. The fisher's exact test is applied 
 per gene, as a 2 x 2 table of cases with and without variants, compared to 
 controls with and without variants. The cases with variants are counted from 
-genotype dataset, and the controls are estimated from a summary public dataset. 
-The workflow is designed and tested on a cohort generated using 
-[this](https://github.com/houlstonlab/select-cohort-variants) workflow, and the 
-GnomAD dataset summary processed using [this](https://github.com/houlstonlab/tabulate-gnomad-variants) workflow.
+genotype dataset, and the controls are estimated from a summary public dataset.
 
 ### Usage
 
 The typical command looks like the following. `--cohorts` is the only required 
-inputs
-
-Different versions of the workflow can be called using `-r` and output directed 
-to `--output_dir`
+input. Different versions of the workflow can be called using `-r` and output
+directed to `--output_dir`.
 
 ```bash
-nextflow run houlstonlab/test-gene-burden \
+nextflow run genomictools/test-gene-burden \
     -r main \
     --output_dir results/ \
     --cohorts input/cohorts_info.csv
